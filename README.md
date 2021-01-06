@@ -8,9 +8,9 @@
 
 SWOT is a community-driven database that has a large list of valid academic emails. This is useful for things like providing student discounts. This package checks against that database to give a reasonably good idea of if a given email is an academic email.
 
-## Instalation
+## Installation
 
-Instalation is done through the Swift Package Manager
+Installation is done through the Swift Package Manager
 
 ```swift
 .package(url: "https://github.com/thecoolwinter/SwiftSWOT.git", from: "1.0.1")
