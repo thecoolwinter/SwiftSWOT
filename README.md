@@ -17,7 +17,7 @@ Instalation is done through the Swift Package Manager
 
 .target(name: "App", dependencies: [
     .product(name: "Vapor", package: "vapor"),
-    .product(name: "SwiftSWOT", package: "swiftswot")
+    .product(name: "SwiftSWOT", package: "SwiftSWOT")
 ])
 ```
 
