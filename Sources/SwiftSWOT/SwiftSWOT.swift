@@ -100,16 +100,37 @@ public struct SwiftSWOT {
         }
     }
         
+    /**
+     # Is Valid Email
+     
+     Checks a string against regex if it's an email
+     - Parameter email: the email string to validate
+     - Returns: `Bool` `true` if it's a correct email string
+     */
     private func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
+        let emailRegEx = try! NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
+        let range = NSRange(location: 0, length: email.utf16.count)
+        return emailRegEx.firstMatch(in: email, options: [], range: range) != nil
     }
     
+    /**
+     # Get Domain
+     
+     Gets the domain from a valid email string
+     - Parameter email: the email string to validate
+     - Returns: `String` eg: google.com or yahoo.org
+     */
     private func getDomain(_ email: String) -> String {
         return email.components(separatedBy: "@").reversed()[0]
     }
     
+    /**
+     # Domain To URL
+     
+     Converts a domain to a path to search the database for
+     - Parameter domain: the domain string to convert
+     - Returns: `String` eg. `google.com` would return `com/google`
+     */
     private func domainToURL(_ domain: String) -> String {
         var domainURLComponents = domain.components(separatedBy: ".")
         domainURLComponents[0] = domainURLComponents[0]
