@@ -13,11 +13,11 @@ SWOT is a community-driven database that has a large list of valid academic emai
 Instalation is done through the Swift Package Manager
 
 ```swift
-.package(url: "https://github.com/thecoolwinter/SwiftSWOT.git", from: "1.0.0")
+.package(url: "https://github.com/thecoolwinter/SwiftSWOT.git", from: "1.0.1")
 
 .target(name: "App", dependencies: [
     .product(name: "Vapor", package: "vapor"),
-    .product(name: "SwiftSWOT", package: "SwiftSWOT")
+    .product(name: "SwiftSWOT", package: "swiftswot")
 ])
 ```
 
