@@ -25,7 +25,8 @@ let package = Package(
             ],
             resources: [
                 .copy("Resources")
-            ]),
+            ]
+            version: "1.0.0"),
         .testTarget(
             name: "SwiftSWOTTests",
             dependencies: ["SwiftSWOT"]),
